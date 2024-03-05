@@ -8,7 +8,7 @@ After that you'll get your compiler in `bin` directory.
 ## Run
 	# from the project's directory
 	$ cd bin
-	$ duong <filename>
+	$ ./duong <filename>
 
 
 ## Syntax
