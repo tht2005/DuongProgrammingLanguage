@@ -2,7 +2,7 @@
 ## About
 	My basic compiler for learning.
 ## Build
-	# Install Make first
+	Install Make
 	$ ./make
 After that you'll get your compiler in `bin` directory.
 ## Run
