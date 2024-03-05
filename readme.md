@@ -24,7 +24,7 @@ Or like this
 Like C/C++, the program should start at the `main()` function.
 You `must` tab before `write` function because it's a statement in `main()` function.
 ### Data types
-	There are some basic data types provided in duong: int, string, float, array.
+	There are some basic data types provided in duong: int, float, string, char, array.
 ### Array declaration
 	array<int> a(10)		# declare an array with size of 10
 	array<int> a(10, 0)		# declare an array with size of 10, all value equal 0
@@ -33,6 +33,9 @@ You `must` tab before `write` function because it's a statement in `main()` func
 ### Assignment
 	int n = 5	# declare n = 5
 	let n = 7	# assign n = 7
+### Operators
+	+, -, *, / 	(math operator for int and float)
+	+		(string concentration, ex: "a" + "b" == "ab")
 ### Input
 	main()
 		int n
@@ -46,7 +49,7 @@ How you declare and call functions:
 foo(string s)				# a procedure
 	write s, ' ', 123, "!!"	# use ',' seperator in write command
 
-calc(int a, int b) => int		# a function with integer return-value
+calc(int a, int b) => int		# a function with an integer return-value
 	return a + b
 
 main()
