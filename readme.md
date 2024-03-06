@@ -1,14 +1,22 @@
 # Duong's compiler
 ## About
-	My basic compiler for learning.
+	A C-based programming language.
+## Require
+	Install CC (C compiler)
+	Install Make
 ## Build
-	# Install Make first
 	$ ./make
 After that you'll get your compiler in `bin` directory.
-## Run
+## Command
 	# from the project's directory
-	$ cd bin
-	$ ./duong <filename>
+	$ cd bin		# or add the bin directory to your system path
+	
+	# Example
+	
+	$ ./duong --help				# help
+	$ ./duong --version				# get current version
+	$ ./duong <filename>				# compile with default output name
+	$ ./duong <filename> -o <output> 		# compile with custom output name
 
 
 ## Syntax
@@ -47,7 +55,7 @@ You `must` tab before `write` function because it's a statement in `main()` func
 How you declare and call functions:
 ```
 foo(string s)				# a procedure
-	write s, ' ', 123, "!!"	# use ',' seperator in write command
+	write s, ' ', 123, "!!"		# use ',' seperator in write command
 
 calc(int a, int b) => int		# a function with an integer return-value
 	return a + b
