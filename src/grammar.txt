@@ -1,1 +1,3 @@
-
+tab ::= "\t"
+type ::= "int" | "float" | "string" | "char";
+keyword ::= type | "read" | "write" | "while" | "if" | "else"

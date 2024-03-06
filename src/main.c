@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "debug.h"
 #include "defs.h"
 
@@ -16,7 +18,7 @@ void getFile(const char *fileName) {
 	fileLength = ftell(f);
 	fseek(f, 0, SEEK_SET);
 
-	fileBuffer = CP((void*)malloc(fileLength),
+	fileBuffer = CP((void*)malloc(fileLength + 5),
 			"Out of memory (fileBuffer alloc).");	
 	fread(fileBuffer, 1, fileLength, f);
 
@@ -25,9 +27,55 @@ void getFile(const char *fileName) {
 
 int main(int argc, char *argv[]) {
 	if(argc == 1) {
-		CP(0, "No input.");
+		printf("\nNo input, use the command ./duong --help to know about commands.\n");
+		return 0;
 	}
 	atexit(clean);
-	getFile(argv[1]);
+	if(argc == 2) {
+		if(strcmp(argv[1], "--help") == 0) {
+			getFile("./doc/help.txt");
+			printf("\n%s\n", fileBuffer);
+			return 0;
+		}
+		if(strcmp(argv[1], "--version") == 0) {
+			printf("\nDuong's compiler, version %s\n", VERSION);
+			return 0;
+		}
+	}
+
+	char *input = NULL, *output = NULL;
+	for(int i = 1; i < argc; ++i) {
+		if(argv[i][0] == '-') {
+			if(strcmp(argv[i], "-o") == 0) {
+				if(i + 1 == argc) {
+					err("Expect a string after an output flag");
+				}
+				if(output) {
+					err("Too many output files");
+				}
+				output = argv[i + 1];
+				++i;
+			}
+			else {
+				err("Invalid command.");
+			}
+		}
+		else {
+			if(input) {
+				err("Too many input files");
+			}
+			input = argv[i];
+		}
+	}
+
+	// default output name
+	if(!output) {
+		err("i haven't coded this");
+		output = input; //temporary, need to fix later
+	}
+
+	getFile(input);
+
 	return 0;
 }
+

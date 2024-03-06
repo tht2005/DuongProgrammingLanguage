@@ -19,4 +19,9 @@ void *CP(void *ptr, const char *msg) {
 	return ptr;
 }
 
+void err(const char *msg) {
+	printf("Abort: %s\n", msg);
+	exit(1);
+}
+
 #endif

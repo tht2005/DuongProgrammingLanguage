@@ -1,0 +1,7 @@
+Duong's Compiler
+Git repo: https://github.com/tht2005/DuongProgrammingLanguage
+
+$ ./duong --help				# help
+$ ./duong --version				# get current version
+$ ./duong <filename>				# compile with default output name
+$ ./duong <filename> -o <output> 		# compile with custom output name
