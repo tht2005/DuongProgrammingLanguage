@@ -42,8 +42,9 @@ You `must` tab before `write` function because it's a statement in `main()` func
 	int n = 5	# declare n = 5
 	let n = 7	# assign n = 7
 ### Operators
-	+, -, *, / 	(math operator for int and float)
+	+, -, *, /, % 	(math operator for int and float)
 	+		(string concentration, ex: "a" + "b" == "ab")
+	+=, -=, *=, /=, %=
 ### Input
 	main()
 		int n
