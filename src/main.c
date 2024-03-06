@@ -2,6 +2,7 @@
 
 #include "debug.h"
 #include "defs.h"
+#include "vector.h"
 
 int fileLength = 0;
 char *fileBuffer = NULL;
