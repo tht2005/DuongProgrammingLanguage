@@ -55,7 +55,8 @@ You `must` tab before `write` function because it's a statement in `main()` func
 How you declare and call functions:
 ```
 foo(string s)				# a procedure
-	write s, ' ', 123, "!!"		# use ',' seperator in write command
+	write s ' ' 123 "!!"		# use spaces to seperate data in write command
+	write s ' '123"!!"		# in some special case don't need space
 
 calc(int a, int b) => int		# a function with an integer return-value
 	return a + b
@@ -81,10 +82,11 @@ main()
 		else
 			# do something
 #### while
+	int a[100]
+	
 	main()
 		int n
 		read n
-		array<int> a(n)
 		int i = 0
 		while i < n
 			read a[i]
