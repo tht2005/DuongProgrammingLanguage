@@ -15,7 +15,7 @@ After that you'll get your compiler in `bin` directory.
 	
 	$ ./duong --help				# help
 	$ ./duong --version				# get current version
-	$ ./duong <filename>				# compile with default output name
+	$ ./duong <filename>				# compile with default output name (not yet supported)
 	$ ./duong <filename> -o <output> 		# compile with custom output name
 
 
