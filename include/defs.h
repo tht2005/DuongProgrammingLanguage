@@ -4,6 +4,6 @@
 #define NAME		"Duong's compiler"
 #define VERSION		"0.0.1"
 
-#define TAB		'\t'
+#define MAX_TOKEN	100005
 
 #endif

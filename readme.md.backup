@@ -32,10 +32,9 @@ Or like this
 Like C/C++, the program should start at the `main()` function.
 You `must` tab before `write` function because it's a statement in `main()` function.
 ### Data types
-	There are some basic data types provided in duong: int, float, string, char, array.
+	There are some basic data types provided in duong: int, float, string, char.
 ### Array declaration
-	array<int> a(10)		# declare an array with size of 10
-	array<int> a(10, 0)		# declare an array with size of 10, all value equal 0
+	int a[10]			# not have a default value, you should initialize it
 	
 	print a[i]			# access i-th element of array
 ### Assignment
@@ -44,6 +43,7 @@ You `must` tab before `write` function because it's a statement in `main()` func
 ### Operators
 	+, -, *, /, % 	(math operator for int and float)
 	+		(string concentration, ex: "a" + "b" == "ab")
+	+=, -=, *=, /=, %=
 ### Input
 	main()
 		int n

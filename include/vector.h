@@ -10,11 +10,11 @@
  *
  *	int main() {
  *		vector(int) a; // declaration
- *		a.push_back(1);
- *		a.pop_back();
- *		a.empty();
- *		a.back();
- *		a.at(0);
+ *		push_back(&a, 1);
+ *		pop_back(&a);
+ *		empty(&a);
+ *		back(&a);
+ *		at(&a, 0);
  *	}
  */
 
@@ -24,10 +24,12 @@
 #include <assert.h>
 #include <stdbool.h>
 
+#include "debug.h"
+
 #define define_vector(type) \
 \
 	typedef struct { \
-		int size; \
+		size_t size; \
 		type *arr; \
 	} _vector_##type; \
 \
@@ -43,7 +45,8 @@
 	void push_back(_vector_##type *v, type val) { \
 		int new_size = (v->size) + 1; \
 		if((new_size & (new_size - 1)) == 0) { \
-			v->arr = realloc(v->arr, 2 * new_size * sizeof(type)); \
+			v->arr = CP(	realloc(v->arr, 2 * new_size * sizeof(type)), \
+					"Out of memory"); \
 		} \
 		v->arr[v->size] = val; \
 		++(v->size); \
@@ -54,9 +57,17 @@
 		--(v->size); \
 	} \
 \
+	size_t size(_vector_##type *v) { \
+		return (v->size); \
+	} \
+\
 	type* at(_vector_##type *v, size_t i) { \
 		assert(i < (v->size)); \
 		return &v->arr[i]; \
+	} \
+\
+	void del(_vector_##type *v) { \
+		free(v->arr); \
 	}
 
 #define vector(type)	_vector_##type	

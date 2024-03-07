@@ -1,8 +1,12 @@
+#include <stdbool.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "debug.h"
 #include "defs.h"
 #include "vector.h"
+
+#include "lexer.h"
 
 int fileLength = 0;
 char *fileBuffer = NULL;
@@ -76,6 +80,13 @@ int main(int argc, char *argv[]) {
 	}
 
 	getFile(input);
+
+	lexerInit(fileBuffer);
+
+	struct Token *a;
+	while((a = getToken())->type != EF) {
+		printf("%s %d\n", a->str.arr, a->type);
+	}
 
 	return 0;
 }
